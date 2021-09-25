@@ -1,0 +1,48 @@
+empty_dict = {} # Pythonic
+empty_dict2 = dict(); # menos Pythonic
+grades = {"Joel" : 80, "Tim" : 95} # dicionário literal
+
+joels_grade = grades["Joel"]
+# print(joels_grade) # 80
+# kate_grade = grades['Kate'] # returns an error
+
+# try:
+#   kates_grade = grades["Kate"]
+# except KeyError:
+#   print ("no grade for Kate!")
+
+joel_has_grade = "Joel" in grades
+# print(joel_has_grade) # True
+kate_has_grade = "Kate" in grades
+# print(kate_has_grade) # False
+
+joels_grade = grades.get("Joel", 0) 
+# print(joels_grade) # 80
+kates_grade = grades.get("Kate", 0) # é igual a 0
+# print(kates_grade) # 0
+
+# print(grades['Tim']) # 95
+grades["Tim"] = 99 # substitui o valor antigo
+# print(grades['Tim']) # 99
+grades["Kate"] = 100 # adiciona uma terceira entrada
+# print(grades['Kate']) # 100
+num_students = len(grades) # atribuindo variável
+# print(len(grades)) # 3
+
+tweet = {
+        "user" : "joelgrus",
+        "text" : "Data Science is Awesome",
+        "retweet_count" : 100,
+        "hashtags" : ["#data", "#science", "#datascience", "#awesome", "#yolo"]
+}
+
+tweet_keys = tweet.keys() # lista de chaves
+# print(tweet.keys()) # dict_keys(['user', 'text', 'retweet_count', 'hashtags']) 
+tweet_values = tweet.values() # lista de valores-chave
+# print(tweet.values()) # dict_values(['joelgrus', 'Data Science is Awesome', 100, ['#data', '#science', '#datascience', '#awesome', '#yolo']])
+tweet_items = tweet.items() # lista de (chave, valor) tuplas
+# print(tweet.items()) 
+
+# "user" in tweet_keys # Verdadeiro, mas usa list in, mais lento
+# "user" in tweet # mais Pythonic, usa dict in, mais rápido
+# "joelgrus" in tweet_values # Verdadeiro
